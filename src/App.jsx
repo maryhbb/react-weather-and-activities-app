@@ -1,9 +1,14 @@
 import "./index.css";
+import "./App.css";
+import Form from "./components/Form/index.jsx";
+
 function App() {
   return (
     <>
-      <h1>Weather & Activities App</h1>
-      <p>Use this as a starting point to develop your own application :-)</p>
+      <div className="App">
+        <h1>Wheather & Activities App</h1>
+        <Form />
+      </div>
     </>
   );
 }
