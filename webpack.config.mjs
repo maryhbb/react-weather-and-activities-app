@@ -8,7 +8,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 function webpackConfig(_env, { mode = "development" }) {
   const isDevelopment = mode === "development";
+
   return {
+    devtool: isDevelopment ? "eval-source-map" : "source-map",
     mode,
     entry: "./src/index.jsx",
     devServer: {
