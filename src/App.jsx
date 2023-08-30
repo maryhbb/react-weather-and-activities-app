@@ -66,10 +66,22 @@ function App() {
 
   return (
     <>
-      <div className="App">
-        <h1>Wheather & Activities App</h1>
+      <div className="app">
+        <h1 className="app-heading">
+          <span style={{ fontSize: "1.5em" }}>{weather?.condition}</span>
+          <span>{weather?.temperature}&nbsp;&#8451;</span>
+        </h1>
+
+        <h3>
+          {isGoodWeather
+            ? "The weather is awesome! Go outside and: "
+            : "Bad weather outside! Here's what you can do now: "}
+        </h3>
+        <List
+          activities={filteredActivities}
+          onDeleteActivity={handleDeleteActivity}
+        />
         <Form onAddActivity={handleAddActivity} />
-        <List activities={filteredActivities} />
       </div>
     </>
   );
