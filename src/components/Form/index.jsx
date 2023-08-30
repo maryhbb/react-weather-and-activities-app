@@ -1,19 +1,38 @@
+import { uid } from "uid";
 import Button from "../Button";
 import "./Form.css";
 
-export const Form = () => {
+export const Form = ({ onAddActivity }) => {
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formElement = form.elements;
+
+    const data = {
+      name: formElement.name.value,
+      isForGoodWeather: formElement.isForGoodWeather.checked,
+      id: uid(),
+    };
+
+    onAddActivity(data);
+
+    form.reset();
+    formElement.name.focus();
+  }
+
   return (
     <form
       className="form"
       aria-labelledby="formHeading"
-      //   onSubmit={handleSubmit}
+      onSubmit={handleSubmit}
     >
       <h2 className="form__header" id="formHeading">
         Add new Activity:
       </h2>
       <div className="form__row">
         <label className="form__label" htmlFor="name">
-          Name: 
+          Name:
         </label>
 
         <input
