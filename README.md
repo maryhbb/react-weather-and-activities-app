@@ -5,5 +5,10 @@ I created an app that fetches a weather object from an API and conditionally pic
 
 The way I handled data in this app exemplifies the fundamental CRUD operations: Create, Read, Update, and Delete. These operations constitute the essential features that any app requires.
 
+![](https://skillicons.dev/icons?i=react)
+![](https://skillicons.dev/icons?i=javascript)
+![](https://skillicons.dev/icons?i=css)
+
+-------------------------------------
 
 ## [⛈️🌤️🌧️☀️ Live Demo](https://maryhbb.github.io/react-weather-and-activities-app/)
