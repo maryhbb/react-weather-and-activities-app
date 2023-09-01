@@ -6,6 +6,7 @@ The project is a React.js-based app that uses a weather API to suggest activitie
 ![](https://skillicons.dev/icons?i=react)
 ![](https://skillicons.dev/icons?i=javascript)
 ![](https://skillicons.dev/icons?i=css)
+![](https://skillicons.dev/icons?i=webpack)
 
 -------------------------------------
 
