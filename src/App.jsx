@@ -17,7 +17,6 @@ function App() {
   }
 
   function handleDeleteActivity(id) {
-    console.log("delete Item with id: ", id);
     setActivities(previousActivities =>
       previousActivities.filter(activity => activity.id !== id),
     );
@@ -47,15 +46,6 @@ function App() {
     };
   }, []);
 
-  const isGoodWeather = weather?.isGoodWeather ?? false;
-  console.log(weather);
-
-  const filteredActivities = activities.filter(
-    activity => activity.isForGoodWeather === isGoodWeather,
-  );
-
-  console.log(filteredActivities);
-
   if (!weather) {
     return (
       <div className="app-loading">
@@ -64,16 +54,20 @@ function App() {
     );
   }
 
+  const filteredActivities = activities.filter(
+    activity => activity.isForGoodWeather === weather.isGoodWeather,
+  );
+
   return (
     <>
       <div className="app">
         <h1 className="app-heading">
-          <span style={{ fontSize: "1.5em" }}>{weather?.condition}</span>
-          <span>{weather?.temperature}&nbsp;&#8451;</span>
+          <span style={{ fontSize: "1.5em" }}>{weather.condition}</span>
+          <span>{weather.temperature}&nbsp;&#8451;</span>
         </h1>
 
         <h3>
-          {isGoodWeather
+          {weather.isGoodWeather
             ? "The weather is awesome! Go outside and: "
             : "Bad weather outside! Here's what you can do now: "}
         </h3>
